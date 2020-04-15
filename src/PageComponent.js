@@ -1,6 +1,5 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
-// import { Pagination } from 'react-bootstrap';
 import './App.css';
 
 class PageComponent extends Component{
@@ -31,7 +30,7 @@ class PageComponent extends Component{
         return(
         <> 
         <table border="1">
-        <tr >
+        <tr>
             <th>Title </th>
             <th> URL</th>
             <th>created_at</th>
@@ -44,9 +43,17 @@ class PageComponent extends Component{
             <td>{e.author}</td>
      </tr>)}
      </table>
-     <div><ul className="page-numbers">
-             
-            </ul></div>
+     <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+
     { <div >Page:{this.state.pageNo}</div>}
         </>)
     }
