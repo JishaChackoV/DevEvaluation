@@ -1,5 +1,7 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
+// import { Pagination } from 'react-bootstrap';
+import './App.css';
 
 class PageComponent extends Component{
    constructor(props){
@@ -28,18 +30,23 @@ class PageComponent extends Component{
         console.log("th",datas)
         return(
         <> 
-        <tr style={{border:"solid"}}>
+        <table border="1">
+        <tr >
             <th>Title </th>
             <th> URL</th>
             <th>created_at</th>
             <th>author</th>
         </tr>
-    {(datas!==null)&&datas.hits.map((e)=> <tr>
+        {(datas!==null)&&datas.hits.map((e)=> <tr>
             <td>{e.title}</td>
             <td>{e.url}</td>
             <td>{e.created_at}</td>
             <td>{e.author}</td>
      </tr>)}
+     </table>
+     <div><ul className="page-numbers">
+             
+            </ul></div>
     { <div >Page:{this.state.pageNo}</div>}
         </>)
     }
